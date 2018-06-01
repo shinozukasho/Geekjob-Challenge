@@ -1,4 +1,4 @@
-<?php require_once '../common/scriptUtil.php'; ?>
+﻿<?php require_once '../common/scriptUtil.php'; ?>
 <?php require_once '../common/dbaccesUtil.php'; ?>
 
 <!DOCTYPE html>
@@ -56,3 +56,8 @@
 </body>
 
 </html>
+<?php echo return_top(); ?>
+
+<form action="<?php echo INSERT_CONFIRM ?>" method="POST">
+<input type="hidden" name="tell" value = "">
+</form>

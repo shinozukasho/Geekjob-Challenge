@@ -1,4 +1,4 @@
-<?php require_once '../common/defineUtil.php'; ?>
+﻿<?php require_once '../defineUtil.php'; ?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -8,7 +8,7 @@
 <body>
     <form action="<?php echo INSERT_CONFIRM ?>" method="POST">
     名前:
-    <input type="text" name="name">
+    <input type="text" name="name" value = "<?php if(!empty($_POST['name'])){echo $_POST['name'];}?>">
     <br><br>
 
     生年月日:
@@ -34,7 +34,6 @@
         <?php } ?>
     </select>日
     <br><br>
-
     種別:
     <br>
     <input type="radio" name="type" value="エンジニア" checked>エンジニア<br>
@@ -54,3 +53,4 @@
     </form>
 </body>
 </html>
+<?php echo return_top(); ?>

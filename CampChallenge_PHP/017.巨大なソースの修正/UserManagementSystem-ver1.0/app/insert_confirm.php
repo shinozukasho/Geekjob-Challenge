@@ -1,4 +1,4 @@
-<?php require_once '../common/defineUtil.php'; ?>
+﻿<?php require_once '../defineUtil.php'; ?>
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -8,12 +8,11 @@
 </head>
   <body>
     <?php
-    if(!empty($_POST['name']) && !empty($_POST['year']) && !empty($_POST['type']) 
+    if(!empty($_POST['name']) && !empty($_POST['birthday']) && !empty($_POST['type']) 
             && !empty($_POST['tell']) && !empty($_POST['comment'])){
         
         $post_name = $_POST['name'];
-        //date型にするために1桁の月日を2桁にフォーマットしてから格納
-        $post_birthday = $_POST['year'].'-'.sprintf('%02d',$_POST['month']).'-'.sprintf('%02d',$_POST['day']);
+        $post_birthday = $_POST['birthday']; //yearではなくそのままbirthdayとした。
         $post_type = $_POST['type'];
         $post_tell = $_POST['tell'];
         $post_comment = $_POST['comment'];
@@ -36,7 +35,7 @@
 
         上記の内容で登録します。よろしいですか？
 
-        <form action="<?php echo INSERT_RESULT ?>" method="POST">
+        <form action="<?php echo INSERT_RESULT ?>" method="POST"
           <input type="submit" name="yes" value="はい">
         </form>
         <form action="<?php echo INSERT ?>" method="POST">
